@@ -1,6 +1,7 @@
 {
   "tab_example": "示例栏",
   "trait_ExampleTrait": "示例特性",
+  "trait_ExampleTrait_info": "示例特性的描述",
   "trait_group_example": "示例特性组",
   "Example Group": "示例设置组",
   "Example Switch": "示例开关",

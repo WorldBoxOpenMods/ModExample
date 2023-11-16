@@ -10,7 +10,8 @@ internal static class ExampleTraits
         {
             id = "ExampleTrait",
             group_id = "ExampleTraitGroup",
-            path_icon = "ui/icons/iconLustful"
+            path_icon = "ui/icons/neomodloader",
+            birth = 50
         };
         trait.base_stats[S.health] = 100;
         AssetManager.traits.add(trait);
