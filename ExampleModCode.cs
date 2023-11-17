@@ -1,14 +1,18 @@
 using NeoModLoader.api;
+using NeoModLoader.General;
+using NeoModLoader.General.UI.Tab;
 using UnityEngine;
 
 namespace ExampleMod;
 
 public class ExampleModMain : BasicMod<ExampleModMain>{
-    // public static ExampleModMain Instance { get; }
     protected override void OnModLoad(){
-        ExampleModMain.LogInfo("Hello World!");
+        LogInfo("Hello World!");
+        ExampleGodPowers.init();
+        ExampleTab.Init();
+        ExampleTraits.Init();
     }
     public static void Called(){
-        ExampleModMain.LogInfo("Hello World From Another!");
+        LogInfo("Hello World From Another!");
     }
 }

@@ -35,35 +35,35 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="Assembly-CSharp">
-          <HintPath>..\..\worldbox_Data\Managed\Assembly-CSharp.dll</HintPath>
-        </Reference>
-        <Reference Include="NeoModLoader">
-          <HintPath>..\..\worldbox_Data\StreamingAssets\mods\NeoModLoader.dll</HintPath>
-        </Reference>
-        <Reference Include="System"/>
-        <Reference Include="System.Core"/>
-        <Reference Include="System.Data"/>
-        <Reference Include="System.Xml"/>
-        <Reference Include="UnityEngine">
-          <HintPath>..\..\worldbox_Data\Managed\UnityEngine.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.CoreModule">
-          <HintPath>..\..\worldbox_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UI">
-          <HintPath>..\..\worldbox_Data\Managed\UnityEngine.UI.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UIElementsModule">
-          <HintPath>..\..\worldbox_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
-        </Reference>
-    </ItemGroup>
-    <ItemGroup>
+        <Compile Include="ExampleGodPowers.cs" />
         <Compile Include="ExampleModCode.cs" />
+        <Compile Include="ExampleTab.cs" />
+        <Compile Include="ExampleTraits.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
     <ItemGroup>
+      <Content Include=".gitignore" />
+      <Content Include="default_config.json" />
+      <Content Include="Locales\cz.json" />
+      <Content Include="Locales\en.json" />
       <Content Include="mod.json" />
+    </ItemGroup>
+    <ItemGroup>
+      <Reference Include="Assembly-CSharp">
+        <HintPath>..\..\worldbox_Data\Managed\Assembly-CSharp.dll</HintPath>
+      </Reference>
+      <Reference Include="NeoModLoader">
+        <HintPath>..\..\worldbox_Data\StreamingAssets\mods\NeoModLoader.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine">
+        <HintPath>..\..\worldbox_Data\Managed\UnityEngine.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.CoreModule">
+        <HintPath>..\..\worldbox_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UI">
+        <HintPath>..\..\worldbox_Data\Managed\UnityEngine.UI.dll</HintPath>
+      </Reference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
