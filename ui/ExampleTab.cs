@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using NeoModLoader.General;
 using NeoModLoader.General.UI.Tab;
 
-namespace ExampleMod;
+namespace ExampleMod.UI;
 
 internal static class ExampleTab
 {

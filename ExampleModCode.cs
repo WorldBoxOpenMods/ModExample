@@ -1,8 +1,6 @@
 using NeoModLoader.api;
-using NeoModLoader.General;
-using NeoModLoader.General.UI.Tab;
-using UnityEngine;
-
+using ExampleMod.UI;
+using ExampleMod.Content;
 namespace ExampleMod;
 
 public class ExampleModMain : BasicMod<ExampleModMain>{

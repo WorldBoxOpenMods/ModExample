@@ -33,10 +33,7 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-        <Compile Include="ExampleGodPowers.cs" />
         <Compile Include="ExampleModCode.cs" />
-        <Compile Include="ExampleTab.cs" />
-        <Compile Include="ExampleTraits.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
     <ItemGroup>

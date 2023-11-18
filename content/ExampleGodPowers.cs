@@ -1,4 +1,4 @@
-namespace ExampleMod;
+namespace ExampleMod.Content;
 
 internal static class ExampleGodPowers
 {

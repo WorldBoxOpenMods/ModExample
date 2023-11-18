@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ExampleMod;
+namespace ExampleMod.Content;
 
 internal static class ExampleTraits
 {
