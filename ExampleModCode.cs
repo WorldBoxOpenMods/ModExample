@@ -11,29 +11,23 @@ public class ExampleModMain : BasicMod<ExampleModMain>, IReloadable{
         ExampleGodPowers.init();
         ExampleTab.Init();
         ExampleTraits.Init();
-        Reload();
     }
     public static void Called(){
         LogInfo("Hello World From Another!");
     }
 
+    private static bool _reload_switch;
     public void Reload()
     {
-        ExampleHotfixClass.HotfixExample();
-        HotfixExample();
-    }
-    [Hotfixable]
-    public static void HotfixExample()
-    {
-        LogInfo("Hello World after Hotfix! at 2 from Main");
-    }
-}
-
-public class ExampleHotfixClass
-{
-    [Hotfixable]
-    public static void HotfixExample()
-    {
-        ExampleModMain.LogInfo("Hello World after Hotfix! at 2");
+        _reload_switch = !_reload_switch;
+        var example_trait_to_update = AssetManager.traits.get("ExampleTrait");
+        example_trait_to_update.action_special_effect = _reload_switch ? ExampleActions.example_trait_special_effect : null;
+        example_trait_to_update.special_effect_interval = 1f;
+        
+        foreach(var actor in World.world.units){
+            if(actor!=null && actor.isAlive() && actor.hasTrait("ExampleTrait")){
+                actor.setStatsDirty();
+            }
+        }
     }
 }
