@@ -5,6 +5,8 @@
     "description": "An example mod for NeoModLoader.",
     "iconPath": "icon.png",
     "Dependencies": [],
-    "OptionalDependencies": [],
+    "OptionalDependencies": [
+        "一米.中文名"
+    ],
     "IncompatibleWith": []
 }

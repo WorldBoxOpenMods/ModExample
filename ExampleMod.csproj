@@ -18,7 +18,7 @@
         <DebugType>full</DebugType>
         <Optimize>false</Optimize>
         <OutputPath>bin\Debug\</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <DefineConstants>DEBUG;TRACE;一米_中文名</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -55,6 +55,13 @@
       <Reference Include="UnityEngine.UI">
         <HintPath>..\..\worldbox_Data\Managed\UnityEngine.UI.dll</HintPath>
       </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Chinese_Name\Chinese_Name.csproj"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="additional_resources\name_generators\"/>
+        <Folder Include="additional_resources\word_libraries\"/>
     </ItemGroup>
 
 </Project>
