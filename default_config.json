@@ -4,13 +4,15 @@
             "Id": "Example Switch",
             "Type": "SWITCH",
             "IconPath": "ui/icons/iconHideUI",
-            "BoolVal": true
+            "BoolVal": true,
+            "Callback": "ExampleActions:ExampleSwitchConfigCallBack"
         },
         {
             "Id": "Example Slider",
             "Type": "SLIDER",
             "IconPath": "ui/icons/iconKingdomZones",
-            "FloatVal": 0.5
+            "FloatVal": 0.5,
+            "Callback": "ExampleActions:ExampleSliderConfigCallback"
         },
         {
             "Id": "Example TextInput",
