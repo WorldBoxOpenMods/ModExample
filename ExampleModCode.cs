@@ -17,11 +17,16 @@ namespace ExampleMod;
 ///         <see cref="IReloadable" /> let the mod can be reloaded. It's optional. If you implement this interface, you
 ///         can see reload button in mod list.
 ///     </para>
+///     <para>
+///         <see cref="IUnloadable"/> let the mod can be unloaded. It's optional. If you implement this interface, you
+///         can "unload" this mod when disable this mod.
+///     </para>
 ///     <para>这个类是模组的主类, 你可以把它放到任何地方, 也可以起任意的名字, 也可以设置为internal</para>
 ///     <para><see cref="BasicMod{T}" /> 是一个比较通用的模组基类, 它实现了一些有用的函数</para>
 ///     <para><see cref="IReloadable" /> 让模组可以重载. 是可选的. 如果你实现了这个接口, 你可在模组列表里看到模组重载按钮</para>
+///     <para><see cref="IUnloadable"/> 让模组可以卸载. 是可选的. 如果你实现了这个接口, 你可以在禁用模组时即使"卸载"该模组</para>
 /// </summary>
-public class ExampleModMain : BasicMod<ExampleModMain>, IReloadable
+public class ExampleModMain : BasicMod<ExampleModMain>, IReloadable, IUnloadable
 {
     // Just for displaying mod reloading effect. To emulate the effect of reloading mod, you can replace _reload_switch with manual modifying.
     // 仅用于展示显示模组重载效果(因为代码是静态的, 不能自动修改), 你可以将 _reload_switch 替换为手动修改
@@ -72,10 +77,41 @@ public class ExampleModMain : BasicMod<ExampleModMain>, IReloadable
         // 将特质的效果更新即时应用于所有单位. 
         foreach (var actor in World.world.units)
         {
+            // Search all units and apply traits' modification to them.
+            // 搜索所有拥有ExampleTrait的单位并将特质的效果更新即时应用于它们.
             if (actor != null && actor.isAlive() && actor.hasTrait("ExampleTrait"))
             {
                 actor.setStatsDirty();
             }
+        }
+    }
+
+    // This method will be called when the mod is unloaded. You can unload part of the mod.
+    // 这个函数会在模组"卸载"时被调用. 你可以只卸载模组的一部分.
+    public void OnUnload()
+    {
+        // We only unload a trait here. You can unload more things.
+        // 我们只卸载一个特性. 你可以卸载更多东西.
+
+        // Apply traits' modification to every units immediately here.
+        // 先移除所有单位的ExampleTrait即时应用于所有单位. 
+        foreach (var actor in World.world.units)
+        {
+            // Search all units and apply traits' modification to them.
+            // 搜索所有拥有ExampleTrait的单位并移除这个特质即时应用于它们.
+            if (actor != null && actor.isAlive() && actor.hasTrait("ExampleTrait"))
+            {
+                actor.removeTrait("ExampleTrait");
+                actor.setStatsDirty();
+            }
+        }
+
+        // Remove trait from trait library
+        // 从特性库移除特性
+        if (AssetManager.traits.get("ExampleTrait") != null)
+        {
+            AssetManager.traits.list.Remove(AssetManager.traits.get("ExampleTrait"));
+            AssetManager.traits.dict.Remove("ExampleTrait");
         }
     }
 
@@ -89,13 +125,17 @@ public class ExampleModMain : BasicMod<ExampleModMain>, IReloadable
     protected override void OnModLoad()
     {
         // Hello world
+        // 打印 Hello World
         LogInfo("Hello World!");
         // Example of add name generators and example of mod optional dependencies.
+        // 添加名字生成器的示例和模组可选依赖的示例.
         ExampleNameGenerators.init();
         // Example of new tab and buttons.
+        // 新建标签页和按钮的示例.
         ExampleGodPowers.init();
         ExampleTab.Init();
-        // Example of adding traits, traits group and mod reloading.
+        // Example of adding traits, traits group and mod reloading and unloading.
+        // 添加特性, 特性组和模组重载的示例.
         ExampleTraits.Init();
     }
 
