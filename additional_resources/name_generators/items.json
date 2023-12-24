@@ -1,0 +1,15 @@
+[
+  {
+    "id": "example_item_name_template",
+    "templates": [
+      {
+        "format": "{百家姓}#家骨环#",
+        "weight": 1
+      },
+      {
+        "format": "#示例武器#",
+        "weight": 2
+      }
+    ]
+  }
+]

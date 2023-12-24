@@ -137,6 +137,9 @@ public class ExampleModMain : BasicMod<ExampleModMain>, IReloadable, IUnloadable
         // Example of adding traits, traits group and mod reloading and unloading.
         // 添加特性, 特性组和模组重载的示例.
         ExampleTraits.Init();
+        // Example of adding items, item modifiers and item materials.
+        // 添加装备, 装备词条和装备材料的示例.
+        ExampleItems.Init();
     }
 
     // Example code for mod be called by other mods. You can test mod dependencies by calling this method in your mod. If no other mods call this method, this method is simply useless.

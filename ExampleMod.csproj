@@ -60,8 +60,7 @@
         <ProjectReference Include="..\Chinese_Name\Chinese_Name.csproj"/>
     </ItemGroup>
     <ItemGroup>
-        <Folder Include="additional_resources\name_generators\"/>
-        <Folder Include="additional_resources\word_libraries\"/>
+        <Folder Include="additional_resources\word_libraries\" />
     </ItemGroup>
 
 </Project>

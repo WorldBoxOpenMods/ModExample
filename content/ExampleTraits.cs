@@ -25,6 +25,7 @@ internal static class ExampleTraits
                 ? ExampleActions.example_trait_special_effect
                 : [Hotfixable](pTarget, pTile) =>
                 {
+                    if (Toolbox.randomChance(0.99f)) return false;
                     ExampleModMain.LogInfo("Before hotfixed trait action");
                     return true;
                 };

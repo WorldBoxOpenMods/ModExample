@@ -32,7 +32,20 @@ internal static class ExampleNameGenerators
 #endif
     private static void init_vanilla_name_generators()
     {
-        // No content here
-        // 暂时没有内容
+        /// Add Name Generator for Example Item <see cref= "ExampleItems"/>
+        /// 给示例物品添加名字生成器 <see cref= "ExampleItems"/>
+        NameGeneratorAsset example_item_gn = new NameGeneratorAsset()
+        {
+            id = "example_item_name_template",
+            use_dictionary = true
+        };
+        example_item_gn.motto_parts.Add("first", "Scruffy,Shabby,Sturdy,Bloody,Smooth,Worn,Savage,Broken,Suede,Fancy,Classic,Breezy,Elegant,Rugged,Ruched,Superior,Treaded");
+        example_item_gn.motto_parts.Add("space", " ");
+        example_item_gn.motto_parts.Add("second", "Bone Bow,Great Bone");
+        example_item_gn.templates.Add("first,space,second");
+        example_item_gn.templates.Add("first,space,second");
+        example_item_gn.templates.Add("first,space,second");
+        example_item_gn.templates.Add("second");
+
     }
 }
