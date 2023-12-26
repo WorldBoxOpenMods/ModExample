@@ -56,8 +56,12 @@
         <HintPath>..\..\worldbox_Data\Managed\UnityEngine.UI.dll</HintPath>
       </Reference>
     </ItemGroup>
+    <!-- Optional Dependencies Reference -->
+    <!-- 软依赖引用 -->
     <ItemGroup>
-        <ProjectReference Include="..\Chinese_Name\Chinese_Name.csproj"/>
+        <Reference Include="Chinese_Name">
+            <HintPath>..\..\worldbox_Data\StreamingAssets\mods\NML\CompiledMods\一米_中文名.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Folder Include="additional_resources\word_libraries\" />
