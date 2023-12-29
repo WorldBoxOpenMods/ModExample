@@ -157,7 +157,9 @@ public class ExampleModMain : BasicMod<ExampleModMain>, IReloadable, IUnloadable
         // 添加装备, 装备词条和装备材料的示例.
         ExampleItems.Init();
         // Example of creating event handlers and add new world log message.
+        // It implements two event handlers to handle Plot Start event and World Log Message format event to add new world log message type for tipping plot start.
         // 创建事件处理器和添加新的世界日志消息的示例.
+        // 它实现了两个事件处理器来处理plot开始事件和世界日志消息格式事件, 以添加新的世界日志消息类型来提示一场plot的开始.
         ExampleEventHandlers.init();
     }
 
