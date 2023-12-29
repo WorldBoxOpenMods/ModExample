@@ -9,5 +9,10 @@
   "Example God Power 1": "Example God Power 1 (Common)",
   "Example God Power 1 Description": "Example God Power 1 Description",
   "Example God Power 2": "Example God Power 2 (Toggle)",
-  "Example God Power 2 Description": "Example God Power 2 Description"
+  "Example God Power 2 Description": "Example God Power 2 Description",
+  "ExampleAutoLayoutWindow Title": "Example Auto Layout Window",
+  "test_1": "Example Auto Layout Window",
+  "test_1 Description": "Open the Example Auto Layout Window",
+  "auto_layout_window_text_1_key": "Text 1",
+  "auto_layout_window_text_2_key": "Text 2"
 }

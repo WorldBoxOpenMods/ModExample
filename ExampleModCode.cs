@@ -5,6 +5,7 @@ using ExampleMod.UI;
 using NeoModLoader.api;
 using NeoModLoader.api.attributes;
 using NeoModLoader.General;
+using UnityEngine;
 namespace ExampleMod;
 
 /// <summary>
@@ -31,7 +32,9 @@ public class ExampleModMain : BasicMod<ExampleModMain>, IReloadable, IUnloadable
     // Just for displaying mod reloading effect. To emulate the effect of reloading mod, you can replace _reload_switch with manual modifying.
     // 仅用于展示显示模组重载效果(因为代码是静态的, 不能自动修改), 你可以将 _reload_switch 替换为手动修改
     internal static bool _reload_switch;
-
+    // It is used for storing self made prefab, avoiding prefab objects under root scene. It's optional.
+    // 用于存储自制的预制体, 避免预制体对象直接暴露在场景根节点下. 不是必需的.
+    internal static Transform prefab_library;
     /// <summary>
     ///     <para>
     ///         To test reloading function, you can modify traits in <see cref="ExampleTraits" /> or trait action in
@@ -135,6 +138,10 @@ public class ExampleModMain : BasicMod<ExampleModMain>, IReloadable, IUnloadable
         // Hello world
         // 打印 Hello World
         LogInfo("Hello World!");
+        // Create a prefab library to store prefabs. It's optional.
+        // 创建一个预制体存储库. 不是必需的.
+        prefab_library = new GameObject("PrefabLibrary").transform;
+        prefab_library.SetParent(transform);
         // Example of enabling mod reload feature(You need to replace the user name with your own one)
         // Use this avoiding players from using mod reloading
         // 启用模组重载功能的示例(你需要把名字换成自己的电脑用户)

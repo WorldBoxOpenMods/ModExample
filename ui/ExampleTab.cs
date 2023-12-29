@@ -1,7 +1,7 @@
 using System.Collections.Generic;
+using ExampleMod.UI.Windows;
 using NeoModLoader.General;
 using NeoModLoader.General.UI.Tab;
-
 namespace ExampleMod.UI;
 
 internal static class ExampleTab
@@ -21,8 +21,13 @@ internal static class ExampleTab
         // 设置标签页的布局. 布局是一个字符串列表, 每个字符串是一个分类. 每个分类的名字不重要.
         tab.SetLayout(new List<string>()
         {
-            INFO, DISPLAY, CREATURE
+            INFO,
+            DISPLAY,
+            CREATURE
         });
+        // Create windows.
+        // 创建窗口.
+        _createWindows();
         // Add buttons to the tab.
         // 向标签页添加按钮.
         _addButtons();
@@ -30,11 +35,15 @@ internal static class ExampleTab
         // 更新标签页的布局.
         tab.UpdateLayout();
     }
+    private static void _createWindows()
+    {
+        ExampleAutoLayoutWindow.CreateWindow(nameof(ExampleAutoLayoutWindow), nameof(ExampleAutoLayoutWindow) + " Title");
+    }
 
     private static void _addButtons()
     {
         tab.AddPowerButton(INFO,
-            PowerButtonCreator.CreateWindowButton("test_1", "", SpriteTextureLoader.getSprite("ui/icons/iconSteam")));
+            PowerButtonCreator.CreateWindowButton("test_1", nameof(ExampleAutoLayoutWindow), SpriteTextureLoader.getSprite("ui/icons/iconSteam")));
 
         tab.AddPowerButton(INFO,
             PowerButtonCreator.CreateGodPowerButton("ExampleGodPower1",

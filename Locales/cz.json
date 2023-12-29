@@ -13,5 +13,10 @@
   "Example God Power 1": "示例神力1(普通)",
   "Example God Power 1 Description": "示例神力1描述",
   "Example God Power 2": "示例神力2(开关)",
-  "Example God Power 2 Description": "示例神力2描述"
+  "Example God Power 2 Description": "示例神力2描述",
+  "ExampleAutoLayoutWindow Title": "自动布局窗口示例",
+  "test_1": "自动布局窗口示例",
+  "test_1 Description": "打开自动布局窗口示例",
+  "auto_layout_window_text_1_key": "文本1",
+  "auto_layout_window_text_2_key": "文本2"
 }
