@@ -57,10 +57,18 @@ public class ExampleModMain : BasicMod<ExampleModMain>, IReloadable, IUnloadable
         // Reload locales when mod reloaded, it's optional.
         // 重载模组时重新加载语言文件, 不是必需的
         var locale_dir = GetLocaleFilesDirectory(GetDeclaration());
-        foreach (var file in Directory.GetFiles(locale_dir, "*.json"))
+        foreach (var file in Directory.GetFiles(locale_dir))
         {
-            LM.LoadLocale(Path.GetFileNameWithoutExtension(file), file);
+            if (file.EndsWith(".json"))
+            {
+                LM.LoadLocale(Path.GetFileNameWithoutExtension(file), file);
+            }
+            else if (file.EndsWith(".csv"))
+            {
+                LM.LoadLocales(file);
+            }
         }
+        LM.ApplyLocale();
         // Reload mod resources when mod reloaded, it's optional.
         // 重载模组时重新加载模组资源, 不是必需的
         // Code is coming soon.
