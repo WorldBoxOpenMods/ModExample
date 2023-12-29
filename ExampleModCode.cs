@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using ExampleMod.Content;
 using ExampleMod.UI;
@@ -135,6 +136,14 @@ public class ExampleModMain : BasicMod<ExampleModMain>, IReloadable, IUnloadable
         // Hello world
         // 打印 Hello World
         LogInfo("Hello World!");
+        // Example of enabling mod reload feature(You need to replace the user name with your own one)
+        // Use this avoiding players from using mod reloading
+        // 启用模组重载功能的示例(你需要把名字换成自己的电脑用户)
+        // 避免玩家使用模组重载
+        if (Environment.UserName == "Inmny")
+        {
+            Config.isEditor = true;
+        }
         // Example of add name generators and example of mod optional dependencies.
         // 添加名字生成器的示例和模组可选依赖的示例.
         ExampleNameGenerators.init();
