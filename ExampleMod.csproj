@@ -33,30 +33,30 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-      <Content Include=".gitignore" />
-      <Content Include="default_config.json" />
-      <Content Include="Locales\cz.json" />
-      <Content Include="Locales\en.json" />
-      <Content Include="mod.json" />
+        <Content Include=".gitignore"/>
+        <Content Include="default_config.json"/>
+        <Content Include="Locales\cz.json"/>
+        <Content Include="Locales\en.json"/>
+        <Content Include="mod.json"/>
     </ItemGroup>
     <ItemGroup>
         <Reference Include="NeoModLoader">
             <HintPath>..\..\worldbox_Data\StreamingAssets\mods\NeoModLoader.dll</HintPath>
         </Reference>
-      <Reference Include="Assembly-CSharp">
-        <HintPath>..\..\worldbox_Data\Managed\Assembly-CSharp.dll</HintPath>
-      </Reference>
-      <Reference Include="UnityEngine">
-        <HintPath>..\..\worldbox_Data\Managed\UnityEngine.dll</HintPath>
-      </Reference>
-      <Reference Include="UnityEngine.CoreModule">
-        <HintPath>..\..\worldbox_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-      </Reference>
-      <Reference Include="UnityEngine.UI">
-        <HintPath>..\..\worldbox_Data\Managed\UnityEngine.UI.dll</HintPath>
-      </Reference>
+        <Reference Include="Assembly-CSharp">
+            <HintPath>..\..\worldbox_Data\StreamingAssets\mods\NML\Assembly-CSharp-Publicized.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine">
+            <HintPath>..\..\worldbox_Data\Managed\UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+            <HintPath>..\..\worldbox_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine.TextRenderingModule">
             <HintPath>..\..\worldbox_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UI">
+            <HintPath>..\..\worldbox_Data\Managed\UnityEngine.UI.dll</HintPath>
         </Reference>
     </ItemGroup>
     <!-- Optional Dependencies Reference -->
@@ -67,7 +67,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Folder Include="additional_resources\word_libraries\" />
+        <Folder Include="additional_resources\word_libraries\"/>
     </ItemGroup>
 
 </Project>
