@@ -5,7 +5,6 @@ using ExampleMod.UI;
 using NeoModLoader.api;
 using NeoModLoader.api.attributes;
 using NeoModLoader.General;
-
 namespace ExampleMod;
 
 /// <summary>
@@ -157,6 +156,9 @@ public class ExampleModMain : BasicMod<ExampleModMain>, IReloadable, IUnloadable
         // Example of adding items, item modifiers and item materials.
         // 添加装备, 装备词条和装备材料的示例.
         ExampleItems.Init();
+        // Example of creating event handlers and add new world log message.
+        // 创建事件处理器和添加新的世界日志消息的示例.
+        ExampleEventHandlers.init();
     }
 
     // Example code for mod be called by other mods. You can test mod dependencies by calling this method in your mod. If no other mods call this method, this method is simply useless.
