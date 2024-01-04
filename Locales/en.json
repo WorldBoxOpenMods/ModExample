@@ -13,6 +13,8 @@
   "ExampleAutoLayoutWindow Title": "Example Auto Layout Window",
   "test_1": "Example Auto Layout Window",
   "test_1 Description": "Open the Example Auto Layout Window",
+  "test_4": "Example Wide Window",
+  "test_4 Description": "Open the Example Wide Window",
   "auto_layout_window_text_1_key": "Text 1",
   "auto_layout_window_text_2_key": "Text 2"
 }

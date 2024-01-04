@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using ExampleMod.UI.Windows;
 using NeoModLoader.General;
 using NeoModLoader.General.UI.Tab;
+
 namespace ExampleMod.UI;
 
 internal static class ExampleTab
@@ -35,15 +36,19 @@ internal static class ExampleTab
         // 更新标签页的布局.
         tab.UpdateLayout();
     }
+
     private static void _createWindows()
     {
-        ExampleAutoLayoutWindow.CreateWindow(nameof(ExampleAutoLayoutWindow), nameof(ExampleAutoLayoutWindow) + " Title");
+        ExampleAutoLayoutWindow.CreateWindow(nameof(ExampleAutoLayoutWindow),
+            nameof(ExampleAutoLayoutWindow) + " Title");
+        ExampleWideWindow.CreateAndInit(nameof(ExampleWideWindow));
     }
 
     private static void _addButtons()
     {
         tab.AddPowerButton(INFO,
-            PowerButtonCreator.CreateWindowButton("test_1", nameof(ExampleAutoLayoutWindow), SpriteTextureLoader.getSprite("ui/icons/iconSteam")));
+            PowerButtonCreator.CreateWindowButton("test_1", nameof(ExampleAutoLayoutWindow),
+                SpriteTextureLoader.getSprite("ui/icons/iconSteam")));
 
         tab.AddPowerButton(INFO,
             PowerButtonCreator.CreateGodPowerButton("ExampleGodPower1",
@@ -52,7 +57,8 @@ internal static class ExampleTab
             PowerButtonCreator.CreateToggleButton("ExampleGodPower2",
                 SpriteTextureLoader.getSprite("ui/icons/iconArmor")));
         tab.AddPowerButton(DISPLAY,
-            PowerButtonCreator.CreateWindowButton("test_4", "", SpriteTextureLoader.getSprite("ui/icons/iconArrowUP")));
+            PowerButtonCreator.CreateWindowButton("test_4", nameof(ExampleWideWindow),
+                SpriteTextureLoader.getSprite("ui/icons/iconArrowUP")));
         tab.AddPowerButton(CREATURE,
             PowerButtonCreator.CreateWindowButton("test_5", "",
                 SpriteTextureLoader.getSprite("ui/icons/iconArrowDOWN")));
