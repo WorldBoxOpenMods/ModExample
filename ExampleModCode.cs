@@ -6,6 +6,7 @@ using NeoModLoader.api;
 using NeoModLoader.api.attributes;
 using NeoModLoader.General;
 using UnityEngine;
+
 namespace ExampleMod;
 
 /// <summary>
@@ -32,9 +33,11 @@ public class ExampleModMain : BasicMod<ExampleModMain>, IReloadable, IUnloadable
     // Just for displaying mod reloading effect. To emulate the effect of reloading mod, you can replace _reload_switch with manual modifying.
     // 仅用于展示显示模组重载效果(因为代码是静态的, 不能自动修改), 你可以将 _reload_switch 替换为手动修改
     internal static bool _reload_switch;
+
     // It is used for storing self made prefab, avoiding prefab objects under root scene. It's optional.
     // 用于存储自制的预制体, 避免预制体对象直接暴露在场景根节点下. 不是必需的.
     internal static Transform prefab_library;
+
     /// <summary>
     ///     <para>
     ///         To test reloading function, you can modify traits in <see cref="ExampleTraits" /> or trait action in
@@ -71,6 +74,7 @@ public class ExampleModMain : BasicMod<ExampleModMain>, IReloadable, IUnloadable
                 LM.LoadLocales(file);
             }
         }
+
         LM.ApplyLocale();
         // Reload mod resources when mod reloaded, it's optional.
         // 重载模组时重新加载模组资源, 不是必需的
@@ -150,6 +154,7 @@ public class ExampleModMain : BasicMod<ExampleModMain>, IReloadable, IUnloadable
         {
             Config.isEditor = true;
         }
+
         // Example of add name generators and example of mod optional dependencies.
         // 添加名字生成器的示例和模组可选依赖的示例.
         ExampleNameGenerators.init();
@@ -168,6 +173,7 @@ public class ExampleModMain : BasicMod<ExampleModMain>, IReloadable, IUnloadable
         // 创建事件处理器和添加新的世界日志消息的示例.
         // 它实现了两个事件处理器来处理plot开始事件和世界日志消息格式事件, 以添加新的世界日志消息类型来提示一场plot的开始.
         ExampleEventHandlers.init();
+        ExampleActorOverrideSprite.init();
     }
 
     // Example code for mod be called by other mods. You can test mod dependencies by calling this method in your mod. If no other mods call this method, this method is simply useless.
